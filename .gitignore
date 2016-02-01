@@ -11,3 +11,12 @@
 /log/*
 !/log/.keep
 /tmp
+
+
+# RubyMine artifacts
+.idea
+.idea/*
+/.idea/workspace.xml
+/.idea/tasks.xml
+.DS_Store
+.iml
