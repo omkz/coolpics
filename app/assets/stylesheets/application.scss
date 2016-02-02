@@ -2,10 +2,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$navbar-color: #005686;
+$bg-color: #f0f0f0;
 
 body {
   padding-top: 100px;
   font-family: 'Noto Sans', sans-serif;
+  background: $bg-color;
 }
 
 .alert-alert {
@@ -14,4 +17,29 @@ body {
 
 .alert-notice {
   @extend .alert-info;
+}
+
+.navbar {
+  border: none;
+  background-color: $navbar-color;
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-brand {
+  font-family: 'Montserrat';
+  color: white !important;
+  &:hover {
+    color: $bg-color !important;
+  };
+}
+
+.well {
+  background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
 }

@@ -4,11 +4,42 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
+
+  process :resize_to_fit => [600, -1]
+
+
+  # process resize_to_fit: [800, 800]
+  #
+  # version :thumb do
+  #   process resize_to_fill: [200,200]
+  # end
+
+  # version :thumb do
+  #   process resize_to_fit: [50, 50]
+  # end
+
+  # version :slider do
+  #   process :create_slider_version
+  # end
+  #
+  # def create_slider_version
+  #   img = Magick::Image.read(current_path)
+  #   width = img[0].columns
+  #   height = img[0].rows
+  #   if width > height
+  #     # original is landscape
+  #     resize_to_fill(738, 492)
+  #   else
+  #     # original is portrait
+  #     resize_to_fit(738, 492)
+  #   end
+  # end
+
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

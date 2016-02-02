@@ -1,6 +1,6 @@
 
 <div class="row">
-  <div class="col-lg-9 well">
+  <div class="col-lg-7 well">
     <%= form_for(@post) do |f| %>
         <div class="form-group">
           <%= f.label 'upload meme' %><br>
@@ -13,11 +13,16 @@
 
 <% @posts.each do |post| %>
     <div class="row">
-      <div class="col-lg-9 well">
-        <%= post.user.email if post.user.present? %>
+      <div class="col-lg-7 well">
+        <h3>
+          <%= post.user.email if post.user.present? %>
+        </h3>
         <%= image_tag(post.image_url) if post.image? %>
+        <%# image_tag post.image_url(:thumb) if post.image? %>
       </div>
+      <hr />
     </div>
+
 <% end %>
 
 
