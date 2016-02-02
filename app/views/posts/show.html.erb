@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>User:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
   <strong>Image:</strong>
   <%= image_tag(@post.image_url) if @post.image? %>
 </p>
