@@ -20,8 +20,15 @@
         <h3>
           <%= post.title %>
         </h3>
-        <%= image_tag(post.image_url) if post.image? %>
+        <p>
+          <%= image_tag(post.image_url) if post.image? %>
+        </p>
+
+        <p>
+          <%= link_to "comments", post, class: 'btn btn-primary' %>
+        </p>
+
       </div>
-      <hr />
+
     </div>
 <% end %>

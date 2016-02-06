@@ -1,19 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.title %>
-</p>
+<div class="row">
+  <div class="col-lg-7 well">
+    <h3>
+      <%= @post.title %>
+    </h3>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag(@post.image_url) if @post.image? %>
-</p>
+    <p>
+      <%= image_tag(@post.image_url) if @post.image? %>
+    </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user.email %>
-</p>
+    <div class="fb-comments" data-colorscheme="dark" data-width="100%"></div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  </div>
+</div>
+
+
