@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy,:upvote]
   # GET /posts
   # GET /posts.json
   def index
@@ -63,6 +63,27 @@ class PostsController < ApplicationController
     end
   end
 
+
+  def upvote
+    @post = Post.find(params[:id])
+    @post.upvote_by current_user
+
+    respond_to do |format|
+      format.html{ redirect_to posts_path}
+      format.js{}
+    end
+  end
+
+  def downvote
+    @post = Post.find(params[:id])
+    @post.downvote_by current_user
+
+    respond_to do |format|
+      format.html{ redirect_to posts_path}
+      format.js{}
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -73,4 +94,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :image, :user_id)
     end
+
 end
