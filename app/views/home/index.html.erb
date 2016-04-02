@@ -24,6 +24,10 @@
           <%= image_tag(post.image_url) if post.image? %>
         </p>
         
+        <div class="share-button pull-right">
+          <%= social_share_button_tag(post.title, popup: true)%>
+        </div>
+
         <div class="like" id="<%= post.id %>">
           <%= render partial: 'likes/form', locals: {:@post => post}%>
         </div>

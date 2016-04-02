@@ -58,4 +58,6 @@ gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'font-awesome-rails'
 
+gem 'social-share-button'
+
 
