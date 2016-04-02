@@ -1,0 +1,49 @@
+<!-- <p id="liked comments"> -->
+  <% if current_user.liked? post %>
+      <%= link_to "upvote!", like_post_path(post), method: :put, class: 'btn btn-info liked', remote: true %>
+  <% else %>
+      <%= link_to "upvote!", like_post_path(post), method: :put, class: 'btn btn-info', remote: true %>
+  <% end %>
+
+<div class="votes-<%= @post.id %>">
+    <% if current_user.liked? @post %>
+       <%= link_to "like", dislike_post_path(@post), method: :put, remote: true, class: 'unlike_post' %>
+     <% else %>
+       <%= link_to "dislike", like_post_path(@post), method: :put, remote: true, class: 'like_post' %>
+    <% end %>
+</div>
+
+  <%# if user_signed_in? AND current_user.disliked? post %>
+  <%# if current_user.disliked? post %>
+      <%#=link_to "downvote!", dislike_post_path(post), method: :put,  class: 'btn btn-info disliked', remote: true %>
+  <%# else %>
+      <%#= link_to "downvote!", dislike_post_path(post), method: :put,  class: 'btn btn-info', remote: true %>
+  <%# end %>
+
+  <%#= link_to "comments", post, class: 'btn btn-info', :"data-no-turbolink" => true  %>
+  <%# link_to like_post_path(post), method: :put, class: 'btn btn-info', remote: true do %>
+  <!-- <span class="glyphicon glyphicon-thumbs-up"></span> -->
+  <%#end %>
+  <!--  <a href="#" class="btn btn-info btn-lg">
+   <span class="glyphicon glyphicon-thumbs-up"></span> Like
+   </a> -->
+<!-- </p> -->
+
+<!-- <div class='post-<%=@post.id%>' >
+ <h3><%#= @post.votes.count %> votes</h3><br />
+ <%# link_to "Vote Up", vote_up_path(@post), :remote => true %>
+</div>
+
+<%# if current_user.liked? post %>
+    <%#= form_tag dislike_post_path(post), method: :put, remote: true do %>
+        <#% button_tag class: 'btn btn-info liked' do %>
+            <#%= fa_icon 'thumbs-up' %> unlike
+        <#% end %>
+    <#% end %>
+<#% else %>
+    <#%= form_tag like_post_path(post), method: :put, remote: true do %>
+        <#% button_tag class: 'btn btn-info' do %>
+            <#%= fa_icon 'thumbs-up' %> like
+        <#% end %>
+    <#% end %>
+<%# end %> -->

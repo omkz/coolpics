@@ -64,22 +64,20 @@ class PostsController < ApplicationController
   end
 
 
-  def upvote
+  def like
     @post = Post.find(params[:id])
-    @post.upvote_by current_user
+    @post.liked_by current_user
 
     respond_to do |format|
-      format.html{ redirect_to posts_path}
       format.js{}
     end
   end
 
-  def downvote
+  def unlike
     @post = Post.find(params[:id])
-    @post.downvote_by current_user
+    @post.unliked_by current_user
 
     respond_to do |format|
-      format.html{ redirect_to posts_path}
       format.js{}
     end
   end

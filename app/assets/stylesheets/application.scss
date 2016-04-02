@@ -1,6 +1,7 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 $navbar-color: #005686;
 $bg-color: #f0f0f0;
@@ -42,4 +43,8 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
+}
+
+.liked{
+  color: yellow;
 }

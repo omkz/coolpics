@@ -1,0 +1,2 @@
+console.log('liked.. ');
+$('.like#<%= @post.id %>').html('<%= j render "like", locals: { post: @post } %>');
