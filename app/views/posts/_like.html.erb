@@ -1,9 +1,0 @@
-<% if current_user.liked? @post %>
-    <%= link_to unlike_post_path(@post), method: :put, class: 'btn btn-info liked', remote: true do %>
-        <%= fa_icon 'thumbs-up' %> liked
-    <% end %>
-<% else %>
-    <%= link_to like_post_path(@post), method: :put, remote: true, class: 'btn btn-info' do %>
-        <%= fa_icon 'thumbs-up' %> like
-    <% end %>
-<% end %>

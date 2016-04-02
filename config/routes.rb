@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  # resources :posts
-  resources :posts do
+  resources :posts
+  resources :likes do
     member do
-      put "like", to: "posts#like"
-      put "unlike", to: "posts#unlike"
+      put "like", to: "likes#like"
+      put "unlike", to: "likes#unlike"
     end
   end
+
+  # match :like, to: 'likes#like', as: :like, via: :post
+  # match :unlike, to: 'likes#unlike', as: :unlike, via: :post
 
   get 'home/index'
 

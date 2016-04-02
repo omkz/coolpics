@@ -23,11 +23,11 @@
         <p>
           <%= image_tag(post.image_url) if post.image? %>
         </p>
-        <!-- <p><%#= post.score %> points </p> -->
-        <%#= render "likes/form", post: post%>
+        
         <div class="like" id="<%= post.id %>">
-          <%= render partial: 'posts/like', locals: {:@post => post}%>
+          <%= render partial: 'likes/form', locals: {:@post => post}%>
         </div>
+
     </div>
     </div>
 <% end %>
