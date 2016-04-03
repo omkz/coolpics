@@ -9,7 +9,7 @@
     <p>
       <%= image_tag(@post.image_url) if @post.image? %>
     </p>
-    <%= social_share_button_tag(post.title)%>
+    <%= social_share_button_tag(@post.title)%>
 
     <div class="fb-comments" data-colorscheme="dark" data-width="100%"></div>
 
