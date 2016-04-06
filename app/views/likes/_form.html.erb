@@ -1,13 +1,39 @@
-<small class="point"><p><%= @post.score %> points </p></small>
-<% if current_user.liked? @post %>
-    <%= link_to unlike_like_path(@post), method: :put, class: 'btn btn-info liked', remote: true do %>
-        <%= fa_icon 'thumbs-up' %> liked
+ <small class="point"><p><%= @post.score %> points </p></small>
+<% if user_signed_in? %>
+    <% if current_user.liked? @post %>
+        <%= link_to unlike_like_path(@post), method: :put, class: 'btn btn-info liked', remote: true do %>
+            <%= fa_icon 'thumbs-up' %> liked
+        <% end %>
+    <% else %>
+        <%= link_to like_like_path(@post), method: :put, remote: true, class: 'btn btn-info' do %>
+            <%= fa_icon 'thumbs-up' %> like
+        <% end %>
     <% end %>
+
+    <%= link_to "comments", @post, class: 'btn btn-info', :"data-no-turbolink" => true %>
 <% else %>
-    <%= link_to like_like_path(@post), method: :put, remote: true, class: 'btn btn-info' do %>
+    <%= link_to "javascript:void(0)", class: 'btn btn-info', data: {toggle: 'modal', target: "#myModal"} do %>
         <%= fa_icon 'thumbs-up' %> like
     <% end %>
+    <%= link_to "comments", @post, class: 'btn btn-info', :"data-no-turbolink" => true %>
 <% end %>
 
-<%= link_to "comments", @post, class: 'btn btn-info', :"data-no-turbolink" => true  %>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        Sign Up
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
