@@ -2,14 +2,16 @@
   <div class="col-lg-7 well">
     <%= form_for(@post) do |f| %>
         <div class="form-group">
-          <%= f.label 'title' %><br>
+          <%= f.label 'title' %>
+          <br>
           <%= f.text_field :title, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label 'upload meme' %><br>
+          <%= f.label 'upload meme' %>
+          <br>
           <%= f.file_field :image, class: 'form-control' %>
         </div>
-        <%= f.submit :post, class: 'btn btn-primary'%>
+        <%= f.submit :post, class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
@@ -17,21 +19,30 @@
 <% @posts.each do |post| %>
     <div class="row">
       <div class="col-lg-7 well">
-        <h3>
-          <%= post.title %>
-        </h3>
+        <div class="media">
+          <div class="media-left">
+            <a href="#">
+              <div class="round-image-50"><%= image_tag(current_user.avatar_url) %></div>
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading"> <%= current_user.username %></h4>
+            <small> <%= distance_of_time_in_words(Time.now, post.created_at) %></small>
+          </div>
+        </div>
+        <h3><%= post.title %></h3>
         <p>
           <%= image_tag(post.image_url) if post.image? %>
         </p>
-        
+
         <div class="share-button pull-right">
-          <%= social_share_button_tag(post.title, popup: true)%>
+          <%= social_share_button_tag(post.title, popup: true) %>
         </div>
 
         <div class="like" id="<%= post.id %>">
-          <%= render partial: 'likes/form', locals: {:@post => post}%>
+          <%= render partial: 'likes/form', locals: {:@post => post} %>
         </div>
 
-    </div>
+      </div>
     </div>
 <% end %>
