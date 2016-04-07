@@ -22,11 +22,11 @@
         <div class="media">
           <div class="media-left">
             <a href="#">
-              <div class="round-image-50"><%= image_tag(current_user.avatar_url) if !current_user.nil? %></div>
+              <div class="round-image-50"><%= image_tag(post.user.avatar_url) %></div>
             </a>
           </div>
           <div class="media-body">
-            <h4 class="media-heading"> <%= current_user.username if !current_user.nil? %></h4>
+            <h4 class="media-heading"> <%= post.user.username %></h4>
             <small><%= time_ago_in_words(post.created_at) %></small>
           </div>
         </div>
