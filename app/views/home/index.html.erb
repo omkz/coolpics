@@ -27,7 +27,7 @@
           </div>
           <div class="media-body">
             <h4 class="media-heading"> <%= current_user.username %></h4>
-            <small> <%= distance_of_time_in_words(Time.now, post.created_at) %></small>
+            <small><%= time_ago_in_words(post.created_at) %></small>
           </div>
         </div>
         <h3><%= post.title %></h3>
