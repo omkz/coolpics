@@ -4,7 +4,6 @@
 @import "font-awesome";
 @import "social-share-button";
 
-$navbar-color: #005686;
 $bg-color: #f0f0f0;
 
 body {
@@ -19,23 +18,6 @@ body {
 
 .alert-notice {
   @extend .alert-info;
-}
-
-.navbar {
-  border: none;
-  background-color: $navbar-color;
-}
-
-.navbar-brand {
-  font-weight: 600;
-}
-
-.navbar-default .navbar-nav > li > a, .navbar-brand {
-  font-family: 'Montserrat';
-  color: white !important;
-  &:hover {
-    color: $bg-color !important;
-  };
 }
 
 .well {
