@@ -63,4 +63,5 @@ gem 'social-share-button'
 ## Gemfile for Rails 3+, Sinatra, and Merb
 gem 'will_paginate', '~> 3.1.0'
 
-
+gem 'omniauth'
+gem 'omniauth-facebook'
