@@ -65,3 +65,5 @@ gem 'will_paginate', '~> 3.1.0'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+gem 'rack-mini-profiler'

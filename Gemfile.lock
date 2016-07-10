@@ -124,6 +124,8 @@ GEM
     pg (0.18.4)
     pkg-config (1.1.7)
     rack (1.6.4)
+    rack-mini-profiler (0.10.1)
+      rack (>= 1.2.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5)
@@ -229,6 +231,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   pg (~> 0.15)
+  rack-mini-profiler
   rails (= 4.2.5)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
