@@ -6,6 +6,6 @@ class HomeController < ApplicationController
   end
 
   def list
-    @posts = Post.paginate(:page => params[:page], :per_page => 10)
+    @posts = Post.includes(:user).paginate(:page => params[:page], :per_page => 10)
   end
 end
