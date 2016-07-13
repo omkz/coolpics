@@ -70,3 +70,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 gem 'rack-mini-profiler'
+
+gem "redis-rails" # Will install several other redis-* gems
