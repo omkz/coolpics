@@ -71,4 +71,6 @@ gem 'omniauth-facebook'
 
 gem 'rack-mini-profiler'
 
-gem "redis-rails" # Will install several other redis-* gems
+gem 'redis-namespace'
+gem 'redis-rails'# Will install several other redis-* gems
+

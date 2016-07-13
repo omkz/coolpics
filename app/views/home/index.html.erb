@@ -17,6 +17,7 @@
 </div>
 
 <% @posts.each do |post| %>
+   <% cache post do %>
     <div class="row">
       <div class="col-lg-7 well">
         <div class="media">
@@ -45,5 +46,6 @@
 
       </div>
     </div>
+   <% end %>
 <% end %>
 <%= will_paginate @posts %>
