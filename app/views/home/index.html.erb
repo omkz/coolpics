@@ -14,6 +14,11 @@
         <%= f.submit :post, class: 'btn btn-primary' %>
     <% end %>
   </div>
+  <% if user_signed_in? %>
+      <div class="col-lg-3 well user-stats">
+        <%= render "shared/user_stats" %>
+      </div>
+  <% end %>
 </div>
 
 <% @posts.each do |post| %>
