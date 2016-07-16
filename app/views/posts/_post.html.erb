@@ -1,0 +1,16 @@
+<li id="post-<%= post.id %>">
+  <%# link_to gravatar_for(post.user, size: 50), post.user %>
+  <span class="user"><%= link_to post.user.username, post.user %></span>
+  <span class="content">
+    <h4>
+      Title: <%= post.title %>
+    </h4>
+    <p>
+      <%= image_tag(post.image_url, size: '256x256') if post.image? %>
+    </p>
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(post.created_at) %> ago.
+
+  </span>
+</li>
