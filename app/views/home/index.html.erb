@@ -28,11 +28,14 @@
         <div class="media">
           <div class="media-left">
             <a href="#">
-              <div class="round-image-50"><%= image_tag(post.user.avatar_url) %></div>
+              <div class="round-image-50">
+                <%= link_to_image(post.user.avatar_url, post.user) %>
+              </div>
             </a>
           </div>
           <div class="media-body">
-            <h4 class="media-heading"> <%= post.user.username %></h4>
+            <h4 class="media-heading">
+              <%= link_to post.user.username , post.user %></h4>
             <small><%= time_ago_in_words(post.created_at) %></small>
           </div>
         </div>
