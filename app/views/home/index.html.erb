@@ -41,7 +41,7 @@
         </div>
         <h3><%= post.title %></h3>
         <p>
-          <%= image_tag(post.image_url) if post.image? %>
+          <%= link_to_image(post.image_url, post) %>
         </p>
 
         <div class="share-button pull-right">
