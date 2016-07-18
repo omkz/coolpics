@@ -41,7 +41,7 @@
         </div>
         <h3><%= post.title %></h3>
         <p>
-          <%= link_to_image(post.image_url, post, :"data-no-turbolink" => true) %>
+          <%= link_to_image(post.image_url, post,  data: { turbolinks: 'false' } ) %>
         </p>
 
         <div class="share-button pull-right">

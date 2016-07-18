@@ -10,12 +10,12 @@
         <% end %>
     <% end %>
 
-    <%= link_to "comments", @post, class: 'btn btn-info', :"data-no-turbolink" => true %>
+    <%= link_to "comments", @post, class: 'btn btn-info', data: { turbolinks: 'false' } %>
 <% else %>
     <%= link_to "javascript:void(0)", class: 'btn btn-info', data: {toggle: 'modal', target: "#myModal"} do %>
         <%= fa_icon 'thumbs-up' %> like
     <% end %>
-    <%= link_to "comments", @post, class: 'btn btn-info', :"data-no-turbolink" => true %>
+    <%= link_to "comments", @post, class: 'btn btn-info', data: { turbolinks: 'false' } %>
 <% end %>
 
 
