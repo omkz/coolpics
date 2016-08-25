@@ -1,16 +1,14 @@
 <li id="post-<%= post.id %>">
-  <%# link_to gravatar_for(post.user, size: 50), post.user %>
-  <span class="user"><%= link_to post.user.username, post.user %></span>
   <span class="content">
     <h4>
-      Title: <%= post.title %>
+      <%# post.title %>
+      <%= link_to post.title, post,  data: { turbolinks: 'false' }%>
     </h4>
     <p>
-      <%= image_tag(post.image_url, size: '256x256') if post.image? %>
+      <%= link_to_image(post.image_url, post, data: { turbolinks: 'false' }, size: '256x256') %>
     </p>
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
-
   </span>
 </li>
