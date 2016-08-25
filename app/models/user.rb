@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true, length: {minimum: 3, maximum: 17}
 
   acts_as_voter
   mount_uploader :avatar, PictureUploader
