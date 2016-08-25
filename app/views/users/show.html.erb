@@ -2,6 +2,7 @@
   <aside class="col-md-4 well">
     <section>
       <h1>
+        <span class="square-image-50"><%= image_tag(@user.avatar_url) %></span>
         <%= @user.username %>
       </h1>
     </section>
@@ -20,3 +21,4 @@
     <% end %>
   </div>
 </div>
+
