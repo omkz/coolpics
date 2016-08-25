@@ -1,5 +1,5 @@
 <div class="row">
-  <aside class="col-md-4 well well-sm">
+  <aside class="col-md-4 well">
     <section>
       <h1>
         <%= @user.username %>
@@ -9,7 +9,7 @@
       <%= render 'shared/user_stats' %>
     </section>
   </aside>
-  <div class="col-md-8 well well-sm">
+  <div class="col-md-8 well">
     <%= render 'follow_form' if user_signed_in? %>
     <% if @user.posts.any? %>
         <h3>posts (<%= @user.posts.count %>)</h3>
