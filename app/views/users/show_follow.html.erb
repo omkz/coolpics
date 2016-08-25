@@ -3,11 +3,11 @@
     <section class="user_info">
       <div class="media">
         <div class="media-left">
-          <li class="round-image-50"><%= image_tag(current_user.avatar_url) %></li>
+          <li class="square-image-50"><%= image_tag(@user.avatar_url) %></li>
 
         </div>
         <div class="media-body">
-          <h4 class="media-heading"><%= @user.email %></h4>
+          <h4 class="media-heading"><%= @user.username %></h4>
           <span><%= link_to "view my profile", @user %></span><br />
           <span><b>posting memes:</b> <%= @user.posts.count %></span><br />
         </div>
