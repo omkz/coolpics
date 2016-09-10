@@ -74,3 +74,5 @@ gem 'rack-mini-profiler'
 gem 'redis-namespace'
 gem 'redis-rails'# Will install several other redis-* gems
 
+gem 'friendly_id', '~> 5.1.0'
+
