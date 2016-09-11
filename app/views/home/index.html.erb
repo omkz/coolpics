@@ -45,7 +45,7 @@
         </p>
 
         <div class="share-button pull-right">
-          <%= social_share_button_tag(post.title, popup: true) %>
+          <%= social_share_button_tag(post.title, :url => request.original_url + 'posts/'+ post.slug) %>
         </div>
 
         <div class="like" id="<%= post.id %>">
