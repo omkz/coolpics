@@ -22,8 +22,6 @@ default: &default
   pool: 5
   host: localhost
   username: postgres
-  password: omenk
-
 
 development:
   <<: *default
