@@ -46,6 +46,7 @@
         <div class="like" id="<%= post.id %>">
           <%= render partial: 'likes/form', locals: {:@post => post} %>
         </div>
+        <%= link_to "comments", @post, class: 'btn btn-info', data: { turbolinks: 'false' } %>
 
       </div>
     </div>
