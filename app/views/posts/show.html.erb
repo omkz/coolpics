@@ -2,6 +2,20 @@
 
 <div class="row">
   <div class="col-lg-7 well">
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <div class="square-image-50">
+            <%= link_to_image(@post.user.avatar_url, @post.user) %>
+          </div>
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= link_to @post.user.username , @post.user %></h4>
+        <small><%= time_ago_in_words(@post.created_at) %></small>
+      </div>
+    </div>
     <h3>
       <%= @post.title %>
     </h3>
@@ -9,7 +23,14 @@
     <p>
       <%= image_tag(@post.image_url) if @post.image? %>
     </p>
-    <%= social_share_button_tag(@post.title)%>
+
+    <div class="share-button pull-right">
+      <%= social_share_button_tag(@post.title)%>
+    </div>
+
+    <div class="like" id="<%= @post.id %>">
+      <%= render partial: 'likes/form', locals: {:@post => @post} %>
+    </div>
 
     <div class="fb-comments" data-colorscheme="dark" data-width="100%"></div>
 
