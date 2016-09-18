@@ -21,7 +21,7 @@
     </h3>
 
     <p>
-      <%= image_tag(@post.image_url) if @post.image? %>
+      <%= image_tag(@post.image_url, class: 'img-responsive') if @post.image? %>
     </p>
 
     <div class="share-button pull-right">
