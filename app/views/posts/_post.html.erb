@@ -1,14 +1,15 @@
-<li id="post-<%= post.id %>">
+<div class="col-sm-12 well">
   <span class="content">
     <h4>
-      <%# post.title %>
       <%= link_to post.title, post,  data: { turbolinks: 'false' }%>
     </h4>
+   <span class="timestamp">
+    Posted <%= time_ago_in_words(post.created_at) %> ago.
+   </span>
+   <hr />
     <p>
       <%= link_to_image(post.image_url, post, data: { turbolinks: 'false' }, size: '256x256') %>
     </p>
   </span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(post.created_at) %> ago.
-  </span>
-</li>
+
+</div>

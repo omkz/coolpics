@@ -10,13 +10,10 @@
       <%= render 'shared/user_stats' %>
     </section>
   </aside>
-  <div class="col-md-8 well">
+  <div class="col-md-8">
     <%= render 'follow_form' if user_signed_in? %>
     <% if @user.posts.any? %>
-        <h3>posts (<%= @user.posts.count %>)</h3>
-        <ol class="posts">
           <%= render @posts %>
-        </ol>
         <%= will_paginate @posts %>
     <% end %>
   </div>
