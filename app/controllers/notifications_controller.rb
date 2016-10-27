@@ -1,5 +1,5 @@
 class NotificationsController < ApplicationController
   def index
-    @notifications = Notifications.all.reverse
+    @notifications = Notification.all.reverse
   end
 end
