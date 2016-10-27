@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   has_many :posts
-
   has_many :active_relationships, class_name:  "Relationship",
            foreign_key: "follower_id",
            dependent:   :destroy
@@ -22,6 +21,15 @@ class User < ActiveRecord::Base
 
   has_many :following, through: :active_relationships,  source: :followed
   has_many :followers, through: :passive_relationships
+
+  has_many :recipents, class_name: "User",
+            foreign_key: "recipent_id",
+            dependent:   :destroy
+
+  has_many :senders, class_name: "User",
+            foreign_key: "follower_id",
+            dependent:   :destroy
+
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
