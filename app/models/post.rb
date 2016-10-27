@@ -1,10 +1,10 @@
-class Post < ActiveRecord::Base
+class Post < ApplicationRecord
   extend FriendlyId
 
   acts_as_votable
   mount_uploader :image, PictureUploader
   belongs_to :user
-  
+
   validates :title, :image, presence: true
 
   friendly_id :title, use: :slugged
@@ -12,5 +12,5 @@ class Post < ActiveRecord::Base
   def score
   	self.get_upvotes.size - self.get_downvotes.size
   end
-  
+
 end

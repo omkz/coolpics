@@ -1,4 +1,5 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -30,7 +31,6 @@ class User < ActiveRecord::Base
             foreign_key: "follower_id",
             dependent:   :destroy
 
-
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
@@ -45,11 +45,13 @@ class User < ActiveRecord::Base
   # Follows a user.
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
+    notify
   end
 
   # Unfollows a user.
   def unfollow(other_user)
     active_relationships.find_by(followed_id: other_user.id).destroy
+    notify
   end
 
   # Returns true if the current user is following the other user.
@@ -57,5 +59,8 @@ class User < ActiveRecord::Base
     following.include?(other_user)
   end
 
+  def notify
+    Notification.create(recipent_id: 1, sender_id: 2, message: "A new ketela ki has been created", is_read: false)
+  end
 
 end

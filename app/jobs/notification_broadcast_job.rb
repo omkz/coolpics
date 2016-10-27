@@ -1,13 +1,13 @@
 class NotificationBroadcastJob < ApplicationJob
   queue_as :default
 
-  def perform(event)
-    ActionCable.server.broadcast 'notification_channel', message: render_event(event)
+  def perform(notification)
+    ActionCable.server.broadcast 'notification_channel', message: render_notification(notification)
   end
 
   private
 
-  def render_event(event)
-    ApplicationController.renderer.render(partial: 'notifications/notification', locals: { event: event })
+  def render_notification(notification)
+    ApplicationController.renderer.render(partial: 'notifications/notification', locals: { notification: notification })
   end
 end
