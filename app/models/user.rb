@@ -45,13 +45,13 @@ class User < ApplicationRecord
   # Follows a user.
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
-    notify
+    # notify(recipent, 'follow')
   end
 
   # Unfollows a user.
   def unfollow(other_user)
     active_relationships.find_by(followed_id: other_user.id).destroy
-    notify
+    # notify(recipent, 'unfollow')
   end
 
   # Returns true if the current user is following the other user.
@@ -59,8 +59,8 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
-  def notify
-    Notification.create(recipent_id: 1, sender_id: 2, message: "A new ketela ki has been created", is_read: false)
-  end
+  # def notify(recipent, message)
+  #   Notification.create(recipent_id: 1, sender_id: current_user, message: "A #{message} ki has been created", is_read: false)
+  # end
 
 end
