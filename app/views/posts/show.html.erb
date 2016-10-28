@@ -6,7 +6,7 @@
       <div class="media-left">
         <a href="#">
           <div class="square-image-50">
-            <%= link_to_image(@post.user.avatar_url, @post.user) if @post.user.avatar %>
+            <%= link_to_image(@post.user.avatar_url, @post.user) if @post.user.avatar? %>
           </div>
         </a>
       </div>
