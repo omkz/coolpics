@@ -1,5 +1,5 @@
 class NotificationsController < ApplicationController
   def index
-    @notifications = Notification.all.reverse
+    @notifications = Notification.where(recipent: current_user).reverse
   end
 end

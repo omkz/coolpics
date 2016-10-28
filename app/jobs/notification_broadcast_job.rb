@@ -2,7 +2,8 @@ class NotificationBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(notification)
-    ActionCable.server.broadcast 'notification_channel', message: render_notification(notification)
+    ActionCable.server.broadcast \
+      "notification_channel_#{notification.recipent.id}", message: render_notification(notification)
   end
 
   private
