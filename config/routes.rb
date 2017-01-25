@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'notifications/index'
 
   resources :posts
+  get 'search', to: 'search#search'
+
   resources :likes do
     member do
       put "like", to: "likes#like"

@@ -1,0 +1,22 @@
+<% if @posts.present? %>
+
+    <% @posts.each do |post| %>
+
+        <h3>
+          <%= link_to post.try(:highlight).try(:title) ? post.highlight.title[0].html_safe : post.title,
+                      controller: "posts",
+                      action: "show",
+                      id: post.id%>
+        </h3>
+
+    <% end %>
+
+
+<% else %>
+
+    <%= params[:q] %> returned no matches.
+
+<% end %>
+
+
+
