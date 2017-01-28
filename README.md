@@ -1,6 +1,6 @@
 # Coolpics!
 
-Coolpics! is an open source platform to create sharing image application.
+Coolpics! is an open source platform for creating photo-sharing site that allows its users to share pictures on the app, as well as through a variety of other social networking platforms, such as Facebook, Twitter, Tumblr, and etc.
 It's like 9gag.com :)
 
 ![Coolpics! Screenshot](https://raw.githubusercontent.com/omkz/coolpics/master/public/screenshot.png)
@@ -21,7 +21,7 @@ It's like 9gag.com :)
 ### Requirements
 
 Before you get started, the following needs to be installed:
-  * **Ruby**. Version 2.3.3 is currently used and we don't guarantee everything works with other versions. If you need multiple versions of Ruby, [RVM](https://rvm.io//) is recommended.
+  * **Ruby**. Version 2.3.3 is currently used and we don't guarantee everything works with other versions. If you need multiple versions of Ruby, [rbenv](https://rbenv.org) is recommended.
   * [**RubyGems**](http://rubygems.org/)
   * **Bundler**: `gem install bundler`
   * [**Git**](http://help.github.com/git-installation-redirect)
@@ -51,7 +51,6 @@ Before you get started, the following needs to be installed:
   ```
 
 1. Start the development server:
-Some components are created with React (see [documentation](https://github.com/sharetribe/sharetribe/blob/master/client/README.md)) and they need to be built with Webpack. We have [Foreman](http://theforeman.org/) Procfiles that can be used to run both Rails and Webpack:
 
   ```bash
   rails s
