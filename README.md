@@ -57,7 +57,15 @@ Before you get started, the following needs to be installed:
   rails s
   ```
 
+## If you want to contribute
 
-## MIT License
+The best way to contribute is to do one of the following :
+* Creating tests
+* Refactoring
+* Coding features
+* Correcting logged issues
+* Correcting my English! (I'm a Indonesian, so don't hesitate to fix my sentences or whole paragraphs.)
+
+## License
 
 Coolpics is open source under the MIT license. See [LICENSE](LICENSE) for details.
