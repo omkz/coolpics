@@ -49,12 +49,12 @@ end
 
 
 # Delete the previous posts index in Elasticsearch
-Post.__elasticsearch__.client.indices.delete index: Post.index_name rescue nil
+# Post.__elasticsearch__.client.indices.delete index: Post.index_name rescue nil
 
-# Create the new index with the new mapping
-Post.__elasticsearch__.client.indices.create \
-  index: Post.index_name,
-  body: { settings: Post.settings.to_hash, mappings: Post.mappings.to_hash }
+# # Create the new index with the new mapping
+# Post.__elasticsearch__.client.indices.create \
+#   index: Post.index_name,
+#   body: { settings: Post.settings.to_hash, mappings: Post.mappings.to_hash }
 
-# Index all post records from the DB to Elasticsearch
-Post.import
+# # Index all post records from the DB to Elasticsearch
+# Post.import
