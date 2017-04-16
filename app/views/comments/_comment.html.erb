@@ -1,9 +1,14 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.user.username %>
-</p>
- 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <%= image_tag('64.jpg', class: 'media-object', alt: 'Commerical') %>
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"> <%= comment.user.username %></h4>
+    <p>
+      <%= comment.body %>
+    </p>
+
+  </div>
+</div>

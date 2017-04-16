@@ -32,13 +32,32 @@
       <%= render partial: 'likes/form', locals: {:@post => @post} %>
     </div>
 
-    <div class="fb-comments" data-colorscheme="dark" data-width="100%"></div>
-
-    <h2>Comments</h2>
-    <%= render @post.comments %>
-
-    <h2>Add a comment:</h2>
-	<%= render 'comments/form' %>
-    
   </div>
+</div>
+
+<div class="row comments">
+  <div class="col-lg-7 well">
+   <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Facebook Comments</a></li>
+    <li><a data-toggle="tab" href="#menu1">Coolpic Comments</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <div class="fb-comments" data-colorscheme="dark" data-width="100%"></div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+
+      <!--show comments-->
+      <%= render @post.comments%>
+      <!---->
+
+      <!--comments' form-->
+      <h2>Add a comment:</h2>
+      <%= render 'comments/form' %>
+      <!---->
+
+    </div>
+  </div>
+</div>
 </div>

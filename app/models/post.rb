@@ -1,8 +1,8 @@
 require 'elasticsearch/model'
 
 class Post < ApplicationRecord
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
+  # include Elasticsearch::Model
+  # include Elasticsearch::Model::Callbacks
 
   extend FriendlyId
   
@@ -18,35 +18,35 @@ class Post < ApplicationRecord
 
   friendly_id :title, use: :slugged
 
-  settings index: {number_of_shards: 1} do
-    mappings dynamic: 'false' do
-      indexes :title, analyzer: 'english', index_options: 'offsets'
-    end
-  end
+  # settings index: {number_of_shards: 1} do
+  #   mappings dynamic: 'false' do
+  #     indexes :title, analyzer: 'english', index_options: 'offsets'
+  #   end
+  # end
 
   def score
     self.get_upvotes.size - self.get_downvotes.size
   end
 
-  def self.search(query)
-    __elasticsearch__.search(
-        {
-            query: {
-                multi_match: {
-                    query: query,
-                    fields: ['title']
-                }
-            },
-            highlight: {
-                pre_tags: ['<em>'],
-                post_tags: ['</em>'],
-                fields: {
-                    title: {}
-                }
-            }
-        }
-    )
-  end
+  # def self.search(query)
+  #   __elasticsearch__.search(
+  #       {
+  #           query: {
+  #               multi_match: {
+  #                   query: query,
+  #                   fields: ['title']
+  #               }
+  #           },
+  #           highlight: {
+  #               pre_tags: ['<em>'],
+  #               post_tags: ['</em>'],
+  #               fields: {
+  #                   title: {}
+  #               }
+  #           }
+  #       }
+  #   )
+  # end
 
 end
 
