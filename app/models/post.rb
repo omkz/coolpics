@@ -5,13 +5,16 @@ class Post < ApplicationRecord
   include Elasticsearch::Model::Callbacks
 
   extend FriendlyId
-
-
-  acts_as_votable
-  mount_uploader :image, PictureUploader
+  
   belongs_to :user
 
+  has_many :comments, dependent: :destroy
+  
   validates :title, :image, presence: true
+  
+  acts_as_votable
+
+  mount_uploader :image, PictureUploader
 
   friendly_id :title, use: :slugged
 

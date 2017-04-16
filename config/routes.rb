@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get 'notifications/index'
 
-  resources :posts
+  resources :posts do
+    resources :comments  
+  end
   get 'search', to: 'search#search'
 
   resources :likes do

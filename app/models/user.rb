@@ -1,16 +1,4 @@
 class User < ApplicationRecord
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook]
-
-  validates :username, presence: true, uniqueness: true, length: {minimum: 3, maximum: 17}
-
-  acts_as_voter
-  mount_uploader :avatar, AvatarUploader
-
   has_many :posts
   has_many :active_relationships, class_name:  "Relationship",
            foreign_key: "follower_id",
@@ -30,6 +18,19 @@ class User < ApplicationRecord
   has_many :senders, class_name: "User",
             foreign_key: "follower_id",
             dependent:   :destroy
+
+  has_many :comments
+
+  validates :username, presence: true, uniqueness: true, length: {minimum: 3, maximum: 17}
+
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, :omniauth_providers => [:facebook]
+
+  acts_as_voter
+  mount_uploader :avatar, AvatarUploader
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

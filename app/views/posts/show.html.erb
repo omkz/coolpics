@@ -34,5 +34,11 @@
 
     <div class="fb-comments" data-colorscheme="dark" data-width="100%"></div>
 
+    <h2>Comments</h2>
+    <%= render @post.comments %>
+
+    <h2>Add a comment:</h2>
+	<%= render 'comments/form' %>
+    
   </div>
 </div>
