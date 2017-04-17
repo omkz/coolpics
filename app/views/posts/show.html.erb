@@ -47,14 +47,14 @@
       <div class="fb-comments" data-colorscheme="dark" data-width="100%"></div>
     </div>
     <div id="menu1" class="tab-pane fade">
-
-      <!--show comments-->
-      <%= render @post.comments%>
-      <!---->
-
+		
       <!--comments' form-->
       <h2>Add a comment:</h2>
       <%= render 'comments/form' %>
+      <!---->
+	  
+      <!--show comments-->
+      <%= render @post.comments.reject(&:new_record?) %>
       <!---->
 
     </div>
