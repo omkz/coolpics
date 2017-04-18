@@ -88,3 +88,5 @@ gem 'puma'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
+gem 'activeadmin', github: 'activeadmin'
+
