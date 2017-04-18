@@ -70,8 +70,7 @@ gem 'font-awesome-rails'
 
 gem 'social-share-button'
 
-## Gemfile for Rails 3+, Sinatra, and Merb
-#gem 'will_paginate'
+gem 'kaminari'
 
 gem 'omniauth'
 gem 'omniauth-facebook'

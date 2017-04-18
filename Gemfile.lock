@@ -363,6 +363,7 @@ DEPENDENCIES
   friendly_id
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   mini_magick
   omniauth
   omniauth-facebook
