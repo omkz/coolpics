@@ -6,6 +6,6 @@ class HomeController < ApplicationController
   end
 
   def list
-    @posts = Post.includes(:user).page(params[:page]).per(2)
+    @posts = Post.includes(:user).page(params[:page]).per(10)
   end
 end
