@@ -3,7 +3,7 @@ module Api::V1
 
     def index
       @posts = Post.includes(:comments)
-      render json: @posts, :include => :comments
+      render json: @posts
     end
 
   end
