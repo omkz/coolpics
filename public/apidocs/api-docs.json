@@ -6,6 +6,10 @@
     {
       "path": "/apidocs/api/v1/home.{format}",
       "description": "Home"
+    },
+    {
+      "path": "/apidocs/api/v1/comments.{format}",
+      "description": "Comments"
     }
   ],
   "authorizations": null,
