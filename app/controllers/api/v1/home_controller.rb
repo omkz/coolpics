@@ -1,8 +1,5 @@
 module Api::V1
   class HomeController < ApiController
-    # respond_to :json
-    # swagger_controller :users, "Users Management"
-
     swagger_controller :home, 'Home'
 
     swagger_api :index do
