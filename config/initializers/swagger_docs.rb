@@ -23,8 +23,8 @@ Swagger::Docs::Config.register_apis({
     # :parent_controller => ApplicationController,
     :attributes => {
       :info => {
-        "title" => "Coolpix' documentation ReST API",
-        "description" => "This is a Coolpix' documentation ReST API ",
+        "title" => "Coolpix' ReST API documentation",
+        "description" => "This is a Coolpix' ReST API documentation",
         "contact" => "omenkzz@gmail.com",
         "license" => "Apache 2.0",
         "licenseUrl" => "http://www.apache.org/licenses/LICENSE-2.0.html"
