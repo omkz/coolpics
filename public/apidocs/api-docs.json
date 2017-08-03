@@ -8,5 +8,12 @@
       "description": "Home"
     }
   ],
-  "authorizations": null
+  "authorizations": null,
+  "info": {
+    "title": "Coolpix' documentation ReST API",
+    "description": "This is a Coolpix' documentation ReST API ",
+    "contact": "omenkzz@gmail.com",
+    "license": "Apache 2.0",
+    "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0.html"
+  }
 }

@@ -1,4 +1,12 @@
 Swagger::Docs::Config.base_api_controller = ActionController::API
+
+class Swagger::Docs::Config
+  def self.transform_path(path, api_version)
+    # Make a distinction between the APIs and API documentation paths.
+    "apidocs/#{path}"
+  end
+end
+
 Swagger::Docs::Config.register_apis({
   "1.0" => {
     # location where our api doc files will be generated, as of now we will store files under public directory
