@@ -91,3 +91,6 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'active_model_serializers'
 
+# Swagger
+gem 'swagger-docs'
+

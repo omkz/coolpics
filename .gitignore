@@ -42,3 +42,5 @@ public/uploads
 /config/application.yml
 
 .vscode
+
+public/api/v1
