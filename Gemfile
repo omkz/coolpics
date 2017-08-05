@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -93,4 +94,6 @@ gem 'active_model_serializers'
 
 # Swagger
 gem 'swagger-docs'
+
+gem 'rack-cors', :require => 'rack/cors'
 

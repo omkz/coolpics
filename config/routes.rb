@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   # devise_scope :user do
   #   get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   # end
-  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
+  devise_for :users, :controllers =>
+      { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
 
   resources  :users, :only => [:index, :show] do
     member do

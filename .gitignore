@@ -44,3 +44,4 @@ public/uploads
 .vscode
 
 public/api/v1
+/.env
