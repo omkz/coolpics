@@ -45,6 +45,62 @@
           "method": "get"
         }
       ]
+    },
+    {
+      "path": "/api/v1/posts/{post_id}/comments",
+      "operations": [
+        {
+          "summary": "Create a comment for a post",
+          "notes": "Create a comment for a post by passing post id",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "access_token",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "post_id",
+              "type": "integer",
+              "description": "ID of Post",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "body",
+              "type": "text",
+              "description": "Body of Comment",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": "Comment",
+              "message": "Success"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "nickname": "Api::V1::Comments#create",
+          "method": "post"
+        }
+      ]
     }
   ],
   "authorizations": null
