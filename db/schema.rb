@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418112253) do
+ActiveRecord::Schema.define(version: 20170808202028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,20 @@ ActiveRecord::Schema.define(version: 20170418112253) do
     t.boolean  "is_read"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "oauth_access_tokens", force: :cascade do |t|
+    t.integer  "resource_owner_id"
+    t.integer  "application_id"
+    t.string   "token",             null: false
+    t.string   "refresh_token"
+    t.integer  "expires_in"
+    t.datetime "revoked_at"
+    t.datetime "created_at",        null: false
+    t.string   "scopes"
+    t.index ["refresh_token"], name: "index_oauth_access_tokens_on_refresh_token", unique: true, using: :btree
+    t.index ["resource_owner_id"], name: "index_oauth_access_tokens_on_resource_owner_id", using: :btree
+    t.index ["token"], name: "index_oauth_access_tokens_on_token", unique: true, using: :btree
   end
 
   create_table "posts", force: :cascade do |t|
@@ -129,5 +143,6 @@ ActiveRecord::Schema.define(version: 20170418112253) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "oauth_access_tokens", "users", column: "resource_owner_id"
   add_foreign_key "posts", "users"
 end

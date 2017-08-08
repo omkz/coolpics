@@ -65,4 +65,11 @@ class User < ApplicationRecord
   #   Notification.create(recipent_id: 1, sender_id: current_user, message: "A #{message} ki has been created", is_read: false)
   # end
 
+  class << self
+    def authenticate(email, password)
+      user = User.find_for_authentication(email: email)
+      user.try(:valid_password?, password) ? user : nil
+    end
+  end
+
 end

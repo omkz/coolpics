@@ -91,6 +91,7 @@ gem 'elasticsearch-rails'
 gem 'activeadmin', github: 'activeadmin'
 
 gem 'active_model_serializers'
+gem 'doorkeeper'
 
 # Swagger
 gem 'swagger-docs'
