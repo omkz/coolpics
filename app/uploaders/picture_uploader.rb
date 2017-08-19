@@ -1,16 +1,27 @@
-# encoding: utf-8
-
 class PictureUploader < CarrierWave::Uploader::Base
+
+  include Cloudinary::CarrierWave
+
+  process :convert => 'png'
+  process :tags => ['post_image']
+
+  version :standard do
+    process :resize_to_fill => [100, 150, :north]
+  end
+
+  version :thumbnail do
+    resize_to_fit(50, 50)
+  end
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  include CarrierWave::MiniMagick
-
-  # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
-
-  process :resize_to_fit => [600, -1]
+  # include CarrierWave::MiniMagick
+  #
+  # # Choose what kind of storage to use for this uploader:
+  # storage :file
+  # # storage :fog
+  #
+  # process :resize_to_fit => [600, -1]
 
 
   # process resize_to_fit: [800, 800]

@@ -98,3 +98,5 @@ gem 'swagger-docs'
 
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'cloudinary'
+
