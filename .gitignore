@@ -45,4 +45,4 @@ public/uploads
 
 public/api/v1
 /.env
-config/cloudinary.yml
+

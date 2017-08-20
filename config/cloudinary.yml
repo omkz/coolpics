@@ -1,0 +1,12 @@
+development:
+  cloud_name: <%= ENV["cl_cloud_name"] %>
+  api_key: <%= ENV["cl_api_key"] %>
+  api_secret: <%= ENV["cl_api_secret"] %>
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: <%= ENV["cl_cloud_name"] %>
+  api_key: <%= ENV["cl_api_key"] %>
+  api_secret: <%= ENV["cl_api_secret"] %>
+  enhance_image_tag: <%= ENV["cl_enhance_image_tag"] %>
+  static_image_support: <%= ENV["cl_static_image_support"] %>
