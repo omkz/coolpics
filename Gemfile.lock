@@ -388,6 +388,7 @@ DEPENDENCIES
   active_model_serializers
   activeadmin!
   acts_as_votable
+  autoprefixer-rails
   bootstrap-sass
   bullet
   byebug

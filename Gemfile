@@ -58,6 +58,8 @@ group :test do
 end
 
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+
 
 gem 'devise'
 
