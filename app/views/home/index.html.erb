@@ -3,12 +3,10 @@
     <%= form_for(@post) do |f| %>
         <div class="form-group">
           <%= f.label 'title' %>
-          <br>
           <%= f.text_field :title, class: 'form-control' %>
         </div>
         <div class="form-group">
           <%= f.label 'upload meme' %>
-          <br>
           <%= f.file_field :image, class: 'form-control' %>
         </div>
         <%= f.submit :post, class: 'btn btn-primary' %>
