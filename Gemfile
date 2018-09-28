@@ -38,7 +38,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'acts_as_votable'
 gem 'font-awesome-rails'
-gem 'social-share-button'
 gem 'kaminari'
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -52,8 +51,5 @@ gem 'active_model_serializers'
 gem 'doorkeeper'
 gem 'swagger-docs'
 gem 'rack-cors', :require => 'rack/cors'
-
-
-
 gem 'cloudinary'
 

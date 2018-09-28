@@ -37,15 +37,20 @@
           <%= link_to_image(post.image_url, post,  data: { turbolinks: 'false' } ) %>
         </p>
 
-        <div class="share-button pull-right">
-          <%= social_share_button_tag(post.title, :url => request.original_url + 'posts/'+ post.slug) %>
-        </div>
 
         <div class="like" id="<%= post.id %>">
           <%= render partial: 'likes/form', locals: {:@post => post} %>
         </div>
         <%= link_to "comments", @post, class: 'btn btn-info', data: { turbolinks: 'false' } %>
+       
+        <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", title: 'Share on Facebook', target: '_blank'  do %>
+          <%= fa_stacked_icon "facebook inverse", base: "circle", class: "fa-2x" %>
+        <% end %>
 
+        <%= link_to "http://twitter.com/home?status=#{request.original_url}", title: 'Share on Twitter', target: '_blank' do %>
+         <%= fa_stacked_icon "twitter inverse", base: "circle", class: "fa-2x " %>
+        <% end %>   
+        
       </div>
     </div>
    <% end %>
