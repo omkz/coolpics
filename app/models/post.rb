@@ -19,4 +19,8 @@ class Post < ApplicationRecord
     self.get_upvotes.size - self.get_downvotes.size
   end
 
+  def self.search(query)
+    where("title like ?", "%#{query}%") 
+  end
+
 end

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'notifications/index'
 
+  get "/search", to: 'home#index'
+
   resources :posts do
     resources :comments  
   end
