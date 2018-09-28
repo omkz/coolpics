@@ -2,7 +2,7 @@
   <aside class="col-md-4 well">
     <section>
       <h1>
-        <span class="square-image-50"><%= image_tag(@user.avatar_url) if @user.avatar? %></span>
+        <span class="square-image-50"><%= image_tag(@user.avatar_url(:medium)) %></span>
         <%= @user.username %>
       </h1>
     </section>

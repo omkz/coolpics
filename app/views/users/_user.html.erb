@@ -1,6 +1,6 @@
 <div class="media">
   <div class="media-left">
-    <li class="square-image-50"><%= image_tag(user.avatar_url) %></li>
+    <li class="square-image-50"><%= image_tag user.avatar_url(:medium) %></li>
   </div>
   <div class="media-body">
     <h4 class="media-heading"><%= link_to user.username, user %></h4>

@@ -29,7 +29,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-         <li class="round-image-50"><%= image_tag(current_user.avatar.thumbnail.url) if current_user.avatar? %></li>
+         <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) if current_user.avatar? %></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <%= current_user.username %>
