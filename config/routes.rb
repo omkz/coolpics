@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments  
   end
-  get 'search', to: 'search#search'
 
   resources :likes do
     member do
