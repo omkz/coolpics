@@ -31,16 +31,30 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
 }
 
-.round-image-50 {
-    background-color: white;
-    border-radius: 25px;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    height: 50px;
-    width: 50px;
-    overflow: hidden;
-    text-align: center;
-    img { width: 100% }
+// .round-image-50 {
+//     background-color: white;
+//     border-radius: 25px;
+//     -moz-border-radius: 25px;
+//     -webkit-border-radius: 25px;
+//     height: 50px;
+//     width: 50px;
+//     overflow: hidden;
+//     text-align: center;
+//     img { width: 100% }
+// }
+
+
+.round-image-40 {
+  background-color: white;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  text-align: center;
+  img { width: 100% }
+  margin-top: 5px;
 }
 
 .square-image-50 {
