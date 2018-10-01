@@ -29,6 +29,18 @@ body {
 //   background: $bg-color;
 // }
 
+.platinum-sponsor{
+  min-height: 216px;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(76, 71, 71);
+  background-color: #2196f3;
+  background-image: linear-gradient(#2196f3, #f44336); 
+  background: #2196f3;
+  background: linear-gradient(#2196f3, #f44336);
+}
 .alert-alert {
   @extend .alert-warning;
 }
