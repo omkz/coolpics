@@ -3,13 +3,31 @@
 @import "bootstrap";
 @import "font-awesome";
 
-$bg-color: #f0f0f0;
+// Colors
+$bg-color: rgb(129, 178, 241);
+$dot-color: rgb(246, 248, 246);
+
+// Dimensions
+$dot-size: 2px;
+$dot-space: 22px;
 
 body {
+	background:
+		linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
+		linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+		$dot-color;
+  background-size: $dot-space $dot-space;
   padding-top: 100px;
   font-family: 'Noto Sans', sans-serif;
-  background: $bg-color;
 }
+
+// $bg-color: #f0f0f0;
+
+// body {
+//   padding-top: 100px;
+//   font-family: 'Noto Sans', sans-serif;
+//   background: $bg-color;
+// }
 
 .alert-alert {
   @extend .alert-warning;
