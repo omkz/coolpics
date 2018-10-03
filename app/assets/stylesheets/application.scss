@@ -4,8 +4,8 @@
 @import "font-awesome";
 
 // Colors
-$bg-color: rgb(129, 178, 241);
-$dot-color: rgb(246, 248, 246);
+$bg-color: #e5b2a0;
+$dot-color: #351203;
 
 // Dimensions
 $dot-size: 2px;
@@ -109,7 +109,7 @@ $size: 32px;
 /* Add a dark background color with a little bit see-through */
 .navbar {
   margin-bottom: 0;
-  background-color: #351203;
+  background-color: #30180f;
   border: 0;
   opacity:0.9;
 }
