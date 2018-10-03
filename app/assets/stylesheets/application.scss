@@ -109,7 +109,7 @@ $size: 32px;
 /* Add a dark background color with a little bit see-through */
 .navbar {
   margin-bottom: 0;
-  background-color: #2d2d30;
+  background-color: #351203;
   border: 0;
   opacity:0.9;
 }
@@ -154,7 +154,7 @@ $size: 32px;
 /* Black buttons with extra padding and without rounded borders */
 .btn {
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #351203;
   border-radius: 0;
   transition: .2s;
   border: none;
@@ -163,9 +163,9 @@ $size: 32px;
 
 /* On hover, the color of .btn will transition to white with black text */
 .btn:hover, .btn:focus {
-  border: 1px solid #333;
+  border: 1px solid #351203;
   background-color: #fff;
-  color: #000;
+  color: #351203;
 }
 
 .liked{
