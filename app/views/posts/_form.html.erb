@@ -1,27 +1,16 @@
-<%= form_for(@post, multiple: true) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <!-- <div class="col-lg-4 col-lg-offset-1 well platinum-sponsor">
+    PLATINUM SPONSOR
+  </div> -->
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+<%= form_for(@meme) do |f| %>
+  <div class="form-group">
+    <%= f.label 'title' %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.hidden_field(:image_cache) %>
+  <div class="form-group">
+    <%= f.label 'upload meme' %>
     <%= f.file_field :image %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
+  <%= f.submit :post, class: 'btn btn-primary' %>
 <% end %>

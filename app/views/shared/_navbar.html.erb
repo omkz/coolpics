@@ -28,8 +28,11 @@
       </div>
 
       <ul class="nav navbar-nav navbar-right">
+        
         <% if user_signed_in? %>
-       
+        <li><%= link_to "javascript:void(0)", class: 'btn btn-info', data: {toggle: 'modal', target: "#myUploadForm"} do %>
+          <%= fa_icon 'plus' %> Upload
+        <% end %></li>
         <li><%= link_to '', notifications_index_path, class: "fa fa-bell" %></li>
          <li class="round-image-40"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
             <li class="dropdown">
@@ -52,3 +55,21 @@
     </div>
   </div>
 </nav>
+
+
+
+<!-- myUploadForm Modal -->
+<div class="modal fade" id="myUploadForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Upload Meme</h4>
+      </div>
+      <div class="modal-body">
+        <%= render "posts/form" %>
+      </div>
+     
+    </div>
+  </div>
+</div>

@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-  before_action :meme_new
 
   def index
     if params[:search]
@@ -7,10 +6,6 @@ class HomeController < ApplicationController
     else
       @posts = Post.order("created_at DESC").includes(:user).page(params[:page]).per(10)
     end
-  end
-
-  def meme_new
-    @post = Post.new
   end
 
 end

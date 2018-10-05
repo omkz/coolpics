@@ -1,22 +1,3 @@
-<div class="row">
-  <div class="col-lg-7 well">
-    <%= form_for(@post) do |f| %>
-        <div class="form-group">
-          <%= f.label 'title' %>
-          <%= f.text_field :title, class: 'form-control' %>
-        </div>
-        <div class="form-group">
-          <%= f.label 'upload meme' %>
-          <%= f.file_field :image %>
-        </div>
-        <%= f.submit :post, class: 'btn btn-primary' %>
-    <% end %>
-  </div>
-  <div class="col-lg-4 col-lg-offset-1 well platinum-sponsor">
-    PLATINUM SPONSOR
-  </div>
-</div>
-
 <% @posts.each do |post| %>
    <% cache post do %>
     <div class="row">
