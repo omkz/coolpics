@@ -27,12 +27,12 @@
         </div>
         <%= link_to "comments", @post, class: 'btn btn-info', data: { turbolinks: 'false' } %>
        
-        <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", title: 'Share on Facebook', target: '_blank'  do %>
-          <%= fa_stacked_icon "facebook inverse", base: "circle", class: "fa-2x" %>
+        <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", class: "btn btn--fb", title: 'Share on Facebook', target: '_blank'  do %>
+          <i class="fa fa-facebook fa-fw"></i>Facebook
         <% end %>
 
-        <%= link_to "http://twitter.com/home?status=#{request.original_url}", title: 'Share on Twitter', target: '_blank' do %>
-         <%= fa_stacked_icon "twitter inverse", base: "circle", class: "fa-2x " %>
+        <%= link_to "http://twitter.com/home?status=#{request.original_url}", class: "btn btn--twitter",title: 'Share on Twitter', target: '_blank' do %>
+          <i class="fa fa-twitter fa-fw"></i>Twitter
         <% end %>   
         
       </div>

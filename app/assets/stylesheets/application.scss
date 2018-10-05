@@ -161,6 +161,16 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
+.btn--fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.btn--twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
 /* On hover, the color of .btn will transition to white with black text */
 .btn:hover, .btn:focus {
   border: 1px solid #351203;
