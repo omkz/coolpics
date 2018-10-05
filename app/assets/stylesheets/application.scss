@@ -6,7 +6,7 @@
 .affix {
   top: 0;
   width: 100%;
-  z-index: 9999 !important;
+  z-index: 10;
 }
 
 .affix + .container-fluid {
@@ -50,6 +50,7 @@ body {
   background-image: linear-gradient(#2196f3, #f44336); 
   background: #2196f3;
   background: linear-gradient(#2196f3, #f44336);
+  z-index: -1;
 }
 .alert-alert {
   @extend .alert-warning;
@@ -150,11 +151,15 @@ h1, h2, h3, h4, h5, h6 {
 .open .dropdown-toggle {
   color: #fff ;
   background-color: #555 !important;
+ 
 }
 
 /* Dropdown links */
 .dropdown-menu li a {
   color: #000 !important;
+  // background-color: rgb(128, 33, 33) !important;
+  // z-index: 20000;
+  
 }
 
 /* On hover, the dropdown links will turn red */
