@@ -3,6 +3,16 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.affix {
+  top: 0;
+  width: 100%;
+  z-index: 9999 !important;
+}
+
+.affix + .container-fluid {
+  padding-top: 30px;
+}
+
 // Colors
 $bg-color: #e5b2a0;
 $dot-color: #351203;
@@ -17,7 +27,7 @@ body {
 		linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
 		$dot-color;
   background-size: $dot-space $dot-space;
-  padding-top: 100px;
+  // padding-top: 100px;
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -110,8 +120,9 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
   margin-bottom: 0;
   background-color: #30180f;
-  border: 0;
   opacity:0.9;
+  border: none;
+  border-radius: 0;
 }
 
 /* Add a gray color to all navbar links */
