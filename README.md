@@ -1,6 +1,6 @@
-# Coolpics!
+# Coolpix!
 
-Coolpics! is an open source platform for creating photo-sharing site that allows its users to share pictures on the app, as well as through a variety of other social networking platforms, such as Facebook, Twitter, Tumblr, and etc.
+Coolpix is an open source platform for creating photo-sharing site that allows its users to share pictures on the app, as well as through a variety of other social networking platforms, such as Facebook, Twitter, Tumblr, and etc.
 It's like 9gag.com :)
 
 ![Coolpics! Screenshot](https://raw.githubusercontent.com/omkz/coolpics/master/public/screenshot.png)
