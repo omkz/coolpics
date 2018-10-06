@@ -34,7 +34,7 @@
       <ul class="nav navbar-nav navbar-right">
         
         <% if user_signed_in? %>
-        <li><%= link_to "javascript:void(0)", class: 'btn btn-info', data: {toggle: 'modal', target: "#myUploadForm"} do %>
+        <li><%= link_to "javascript:void(0)", data: {toggle: 'modal', target: "#myUploadForm"} do %>
           <%= fa_icon 'plus' %> Upload
         <% end %></li>
         <li><%= link_to '', notifications_index_path, class: "fa fa-bell" %></li>
