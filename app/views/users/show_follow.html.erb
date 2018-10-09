@@ -11,7 +11,7 @@
         <div class="media-body">
           <h4 class="media-heading"><%= @user.username %></h4>
           <span><%= link_to "view my profile", @user %></span><br />
-          <span><b>posting memes:</b> <%= @user.posts.count %></span><br />
+          <span><b> memes:</b> <%= @user.posts.count %></span><br />
         </div>
       </div>
     </section>
@@ -32,12 +32,9 @@
       <%= paginate @users%>
     <% end %>
   </div>
-
 </div>
 
-  <div class="col-md-4">
-    <div class="col-md-12 well well-lg">
-      ads
-    </div>
+  <div class="col-md-4 platinum-sponsor">
+      PLATINUM SPONSOR
   </div>
 </div>
