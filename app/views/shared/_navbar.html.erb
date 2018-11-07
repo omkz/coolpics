@@ -37,7 +37,7 @@
         <li><%= link_to "javascript:void(0)", data: {toggle: 'modal', target: "#myUploadForm"} do %>
           <%= fa_icon 'plus' %> Upload
         <% end %></li>
-        <li><%= link_to '', notifications_index_path, class: "fa fa-bell" %></li>
+        <li><%= link_to '', notifications_path, class: "fa fa-bell" %></li>
          <li class="round-image-40"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
