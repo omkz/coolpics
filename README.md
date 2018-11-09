@@ -21,7 +21,7 @@ It's like 9gag.com :)
 ### Requirements
 
 Before you get started, the following needs to be installed:
-  * **Ruby**. Version 2.3.3 is currently used and we don't guarantee everything works with other versions. If you need multiple versions of Ruby, [rbenv](https://rbenv.org) is recommended.
+  * **Ruby**. Version 2.5.1 is currently used and we don't guarantee everything works with other versions. If you need multiple versions of Ruby, [rbenv](https://rbenv.org) is recommended.
   * [**RubyGems**](http://rubygems.org/)
   * **Bundler**: `gem install bundler`
   * [**Git**](http://help.github.com/git-installation-redirect)
