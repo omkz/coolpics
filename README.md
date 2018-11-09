@@ -7,8 +7,8 @@ It's like 9gag.com :)
 
 ## Tech Stack
 
-- Ruby 2.3  
-- Ruby on Rails 5.0  
+- Ruby 2.5.1  
+- Ruby on Rails 5.2.1  
 - PostgreSQL 9.5
 - jQuery
 - Gem: 
