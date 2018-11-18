@@ -11,3 +11,5 @@ App.notification = App.cable.subscriptions.create "NotificationChannel",
     # Called when there's incoming data on the websocket for this channel
     console.log('received');
     $('#notifications').prepend "<div class='notifications'>#{notification.message}</div>"
+
+
