@@ -52,4 +52,5 @@ gem 'doorkeeper'
 gem 'swagger-docs'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'cloudinary'
+gem 'webpacker', '~> 3.5'
 
