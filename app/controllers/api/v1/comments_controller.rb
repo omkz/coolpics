@@ -1,7 +1,7 @@
 module Api::V1
   class CommentsController < ApiController
     # before_action :authenticate_user!, only: [:create]
-    before_action :doorkeeper_authorize!
+    #before_action :doorkeeper_authorize!
     before_action :set_post, only: [:create]
 
     swagger_controller :comments, 'Comments'

@@ -1,0 +1,71 @@
+<div class="col-lg-7">
+    <% @posts.each do |post| %>
+      <% cache post do %>
+       <div class="row">
+         <div class="col-lg-12 well">
+           <div class="media">
+             <div class="media-left">
+               <a href="#">
+                 <div class="square-image-50">
+                   <%= link_to_image(post.user.avatar_url(:thumb), post.user) %>
+                 </div>
+               </a>
+             </div>
+             <div class="media-body">
+               <h4 class="media-heading">
+                 <%= link_to post.user.username , post.user %></h4>
+               <small><%= time_ago_in_words(post.created_at) %></small>
+             </div>
+           </div>
+           <h3><%= post.title %></h3>
+           <p>
+             <%= link_to_image(post.image_url, post,  data: { turbolinks: 'false' } ) %>
+           </p>
+   
+   
+           <div class="like" id="<%= post.id %>">
+             <%= render partial: 'likes/form', locals: {:@post => post} %>
+           </div>
+           <%= link_to "comments", @post, class: 'btn btn-info', data: { turbolinks: 'false' } %>
+          
+           <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}", class: "btn btn--fb", title: 'Share on Facebook', target: '_blank'  do %>
+             <i class="fa fa-facebook fa-fw"></i>Facebook
+           <% end %>
+   
+           <%= link_to "http://twitter.com/home?status=#{request.original_url}", class: "btn btn--twitter",title: 'Share on Twitter', target: '_blank' do %>
+             <i class="fa fa-twitter fa-fw"></i>Twitter
+           <% end %>    
+         </div>
+        </div>
+        <% end %>
+     <% end %>
+  <%= paginate @posts %>
+</div>
+
+ <div class="col-lg-4 col-lg-offset-1 well platinum-sponsor">
+    PLATINUM SPONSOR
+</div>
+      
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        
+        <%= render :template => "devise/registrations/new" %>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>     
+      
+      
+    

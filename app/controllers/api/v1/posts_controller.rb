@@ -1,6 +1,6 @@
 module Api::V1
-  class HomeController < ApiController
-    swagger_controller :home, 'Home'
+  class PostsController < ApiController
+    swagger_controller :post, 'Post'
 
     swagger_api :index do
       summary 'Fetches all Post'
@@ -10,6 +10,7 @@ module Api::V1
     def index
       @posts = Post.includes(:comments)
       render json: @posts
+      # render json: @posts, root: "posts", adapter: :json
     end
 
   end
