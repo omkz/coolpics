@@ -64,7 +64,7 @@ The best way to contribute is to do one of the following :
 * Refactoring
 * Coding features
 * Correcting logged issues
-* Correcting my English! (I'm a Indonesian, so don't hesitate to fix my sentences or whole paragraphs.)
+* Correcting my English! (I'm an Indonesian, so don't hesitate to fix my sentences or whole paragraphs.)
 
 ## License
 
