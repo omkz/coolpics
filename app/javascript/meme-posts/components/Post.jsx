@@ -4,9 +4,6 @@ import ReactDOM from "react-dom";
 class Post extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      editable: false
-    };
   }
 
   render() {
