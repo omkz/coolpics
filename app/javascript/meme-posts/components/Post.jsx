@@ -8,10 +8,10 @@ class Post extends React.Component {
 
   render() {
     return (
-      <div className={"col-lg-12 well"}>
-        <h2>{this.props.post.title}</h2>
+     <div>
+       <h2>{this.props.post.title}</h2>
         <img src={this.props.post.image.standard.url} />
-      </div>
+     </div>
     );
   }
 }
