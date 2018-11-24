@@ -23,4 +23,5 @@ class Post < ApplicationRecord
     where("title like ?", "%#{query}%") 
   end
 
+
 end

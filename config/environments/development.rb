@@ -47,6 +47,8 @@ Rails.application.configure do
     Bullet.alert = true
     Bullet.bullet_logger = true
     Bullet.console = true
-  end
-
+  end  
+  # config.default_url_options = { host: "localhost:3000" }
 end
+
+Rails.application.routes.default_url_options[:host] = 'localhost:3000'
