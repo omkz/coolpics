@@ -19,6 +19,7 @@ class User extends React.Component {
           </div>
           <div className="media-body">
             <h4 className="media-heading">{this.props.post.user.username}</h4>
+            <small>{this.props.post.created_at}</small>
           </div>
         </div>
       </div>
