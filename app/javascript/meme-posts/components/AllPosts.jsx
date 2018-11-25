@@ -9,7 +9,7 @@ const AllPosts = props => {
     return (
       <div  className={"col-lg-12 well"} key={post.id}>
         <User post={post} />
-        <Post post={post} />
+        <Post post={post} /> <br />
         <FooterLink post={post} />
       </div>
     );
