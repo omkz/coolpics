@@ -36,12 +36,13 @@ class LikeButton extends React.Component {
     const icon = this.state.liked ? " liked" : "";
     return (
       <React.Fragment>
-        <button
+        <small class="point"><p> 1 points </p></small>
+        <a
           className= {"btn btn-info" + icon}
           onClick={() => this.handleClick(this.props.post.id)}
         >
           <i className= "fa fa-thumbs-up" /> {label}
-        </button>
+        </a>
       </React.Fragment>
     );
   }
