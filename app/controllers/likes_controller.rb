@@ -1,4 +1,5 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!
   
   def like
     @post = Post.friendly.find(params[:id])

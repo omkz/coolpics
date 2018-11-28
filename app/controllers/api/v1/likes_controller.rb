@@ -1,5 +1,6 @@
 module Api::V1
   class LikesController < ApiController
+    before_action :authenticate_user!
     skip_before_action :verify_authenticity_token, :only => [:like, :unlike]
     
     def like

@@ -3,7 +3,7 @@ class PostSerializer < ActiveModel::Serializer
   include ActionView::Helpers::DateHelper
   include Devise::Controllers::Helpers
   
-  attributes :id, :title, :image, :score, :created_at, :url, :is_liked
+  attributes :id, :title, :image, :score, :created_at, :url, :is_liked, :user_signed_in
   belongs_to :user
   has_many :comments
 
@@ -16,6 +16,14 @@ class PostSerializer < ActiveModel::Serializer
   end   
 
   def is_liked
-    scope.current_user.liked?(object)
+    if scope.user_signed_in? 
+      scope.current_user.liked?(object)
+    else
+      false
+    end
+  end
+
+  def user_signed_in
+    scope.user_signed_in? 
   end
 end
