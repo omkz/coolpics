@@ -8,13 +8,16 @@ class Post extends React.Component {
 
   render() {
     return (
-     <div>
-       <h2>{this.props.post.title}</h2>
-        <img src={this.props.post.image.url} className="img-responsive" border="0" />
-     </div>
+      <div>
+        <h2>{this.props.post.title}</h2>
+        <img
+          src={this.props.post.image.url}
+          className="img-responsive"
+          border="0"
+        />
+      </div>
     );
   }
 }
 
 export default Post;
-

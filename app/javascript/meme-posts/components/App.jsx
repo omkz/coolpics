@@ -9,15 +9,19 @@ class App extends React.Component {
       posts: []
     };
   }
+
   componentDidMount() {
     fetch("/api/v1/posts")
       .then(response => {
         return response.json();
       })
       .then(data => {
-        this.setState({ posts: data });
+        this.setState({
+          posts: data
+        });
       });
   }
+
   render() {
     return (
       <div>

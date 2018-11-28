@@ -1,8 +1,9 @@
 class PostSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
   include ActionView::Helpers::DateHelper
-
-  attributes :id, :title, :image, :created_at, :url
+  include Devise::Controllers::Helpers
+  
+  attributes :id, :title, :image, :created_at, :url, :is_liked
   belongs_to :user
   has_many :comments
 
@@ -12,6 +13,9 @@ class PostSerializer < ActiveModel::Serializer
 
   def created_at
     time_ago_in_words(object.created_at)
+  end   
+
+  def is_liked
+    scope.current_user.liked?(object)
   end
-    
 end

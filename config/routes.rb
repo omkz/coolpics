@@ -53,6 +53,12 @@ Rails.application.routes.draw do
       resources :posts do
         resources :comments
       end
+      resources :likes do
+        member do
+          put "like", to: "likes#like"
+          put "unlike", to: "likes#unlike"
+        end
+      end
     end
   end
 
