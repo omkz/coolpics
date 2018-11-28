@@ -17,10 +17,12 @@ class LikeButton extends React.Component {
         headers: {
           "Content-Type": "application/json"
         }
-      }).then((response) => { 
+      })
+      .then((response) => {return response.json()})
+      .then((post)=>{
         this.setState({
           liked: !this.state.liked,
-          score: this.state.score - 1
+          score: post.score
         });
       })
     } else {
@@ -29,12 +31,13 @@ class LikeButton extends React.Component {
         headers: {
           "Content-Type": "application/json"
         }
-      }).then((response) => { 
+      })
+      .then((response) => {return response.json()})
+      .then((post)=>{
         this.setState({
           liked: !this.state.liked,
-          score: this.state.score + 1
+          score: post.score
         });
-        
       })
     }
   }
