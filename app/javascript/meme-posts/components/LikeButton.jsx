@@ -4,39 +4,50 @@ class LikeButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      liked: this.props.post.is_liked
+      liked: this.props.post.is_liked,
+      score: parseInt(this.props.post.score)
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(id) {
-    this.setState({
-      liked: !this.state.liked
-    });
-
     if (this.state.liked == true) {
       fetch(`api/v1/likes/${id}/unlike`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
         }
-      });
+      }).then((response) => { 
+        this.setState({
+          liked: !this.state.liked,
+          score: this.state.score - 1
+        });
+      })
     } else {
       fetch(`api/v1/likes/${id}/like`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
         }
-      });
+      }).then((response) => { 
+        this.setState({
+          liked: !this.state.liked,
+          score: this.state.score + 1
+        });
+        
+      })
     }
   }
 
   render() {
     const label = this.state.liked ? "Liked" : "Like";
     const icon = this.state.liked ? " liked" : "";
+    const score = this.state.score
+    
+    
     return (
       <React.Fragment>
-        <small class="point"><p> 1 points </p></small>
+        <small className="point"><p> {score} points </p></small>
         <a
           className= {"btn btn-info" + icon}
           onClick={() => this.handleClick(this.props.post.id)}

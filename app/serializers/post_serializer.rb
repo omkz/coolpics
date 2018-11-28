@@ -3,7 +3,7 @@ class PostSerializer < ActiveModel::Serializer
   include ActionView::Helpers::DateHelper
   include Devise::Controllers::Helpers
   
-  attributes :id, :title, :image, :created_at, :url, :is_liked
+  attributes :id, :title, :image, :score, :created_at, :url, :is_liked
   belongs_to :user
   has_many :comments
 
