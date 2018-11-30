@@ -51,37 +51,19 @@ class LikeButton extends React.Component {
     const icon = this.state.liked ? " liked" : "";
     const score = this.state.score;
 
-    let element = null;
+    var btn = this.props.post.user_signed_in ? 
+    <a className={"btn btn-info" + icon} onClick={() => this.handleClick(this.props.post.id)}><i className="fa fa-thumbs-up" /> {label}</a> :
+    <a className={"btn btn-info" + icon} onClick={() => (location.href = "/users/sign_in")}><i className="fa fa-thumbs-up" /> {label}</a>;
 
-    if (this.props.post.user_signed_in == true) {
-      element = (
-        <React.Fragment>
-          <small className="point">
-            <p> {score} points </p>
-          </small>
-          <a
-            className={"btn btn-info" + icon}
-            onClick={() => this.handleClick(this.props.post.id)}
-          >
-            <i className="fa fa-thumbs-up" /> {label}
-          </a>
-        </React.Fragment>
-      );
-    } else {
-      element = (
-        <React.Fragment>
-          <small className="point">
-            <p> {score} point </p>
-          </small>
-          <a className={"btn btn-info" + icon} onClick={() => location.href='/users/sign_in'}>
-            <i className="fa fa-thumbs-up" /> {label}
-          </a>
-        </React.Fragment>
-      );
-    }
-    return element;
-
-    return { element };
+    return (
+      <React.Fragment>
+        <small className="point">
+          <p> {score} point </p>
+        </small>
+        {btn}
+        
+      </React.Fragment>
+    );
   }
 }
 
