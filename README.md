@@ -62,7 +62,7 @@ Before you get started, the following needs to be installed:
 Our docker implementation is incomplete and may not work smoothly. Please kindly report any issues and any contribution is welcomed!
 
 1. Install `docker` and `docker-compose`
-1. `git clone git@github.com:omkz/vid.git`
+1. `git clone git@github.com:omkz/coolpics.git`
 1. run `docker-compose build`
 1. run `docker-compose run web rails db:setup`
 1. run `docker-compose up`
