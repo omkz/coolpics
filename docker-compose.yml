@@ -1,0 +1,26 @@
+version: '3.6'
+services:
+  db:
+    image: postgres:9.6-alpine
+    environment:
+      POSTGRES_DB: vid_development
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/vid
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://postgres@db
+    depends_on:
+      - db
+  webpacker:
+    build: .
+    command: ./bin/webpack-dev-server
+    ports:
+      - '3035:3035'
