@@ -27,18 +27,51 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook]
+         :omniauthable,omniauth_providers: [:facebook, :google_oauth2, :twitter]
 
   acts_as_voter
   mount_uploader :avatar, AvatarUploader
 
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+  # def self.from_omniauth(auth)
+  #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+  #     user.provider = auth.provider
+  #     user.uid = auth.uid
+  #     user.email = auth.info.email
+  #     user.password = Devise.friendly_token[0,20]
+  #     user.username = Devise.friendly_token[0,15]
+  #   end
+  # end
+
+  def self.create_from_facebook_data(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do | user |
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
+      user.password = Devise.friendly_token[0, 20]
       user.username = Devise.friendly_token[0,15]
+      # user.skip_confirmation!
+    end
+  end
+
+  def self.create_from_twitter_data(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do | user |
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.username = Devise.friendly_token[0,15]
+      # user.skip_confirmation!
+    end
+  end
+
+  def self.create_from_google_data(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do | user |
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.username = Devise.friendly_token[0,15]
+      # user.skip_confirmation!
     end
   end
 
