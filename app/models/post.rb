@@ -1,6 +1,4 @@
 class Post < ApplicationRecord
-  
-
   extend FriendlyId
   
   belongs_to :user
