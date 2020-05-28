@@ -1,7 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   
   def facebook
-    # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.create_from_facebook_data(request.env["omniauth.auth"])
 
     if @user.persisted?
@@ -14,7 +13,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def twitter
-    # You need to implement the method below in your model (e.g. app/models/user.rb)
     @user = User.create_from_twitter_data(request.env["omniauth.auth"])
 
     if @user.persisted?
@@ -26,7 +24,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
-  # google callback
   def google_oauth2
     @user = User.create_from_google_data(request.env['omniauth.auth'])
     if @user.persisted?

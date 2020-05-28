@@ -32,16 +32,6 @@ class User < ApplicationRecord
   acts_as_voter
   mount_uploader :avatar, AvatarUploader
 
-  # def self.from_omniauth(auth)
-  #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-  #     user.provider = auth.provider
-  #     user.uid = auth.uid
-  #     user.email = auth.info.email
-  #     user.password = Devise.friendly_token[0,20]
-  #     user.username = Devise.friendly_token[0,15]
-  #   end
-  # end
-
   def self.create_from_facebook_data(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do | user |
       user.provider = auth.provider
@@ -49,7 +39,6 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.username = Devise.friendly_token[0,15]
-      # user.skip_confirmation!
     end
   end
 
@@ -60,7 +49,6 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.username = Devise.friendly_token[0,15]
-      # user.skip_confirmation!
     end
   end
 
@@ -71,32 +59,20 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.username = Devise.friendly_token[0,15]
-      # user.skip_confirmation!
     end
   end
 
-  #omenk.follow(paijo)
-  #relationship.create()
-  # Follows a user.
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
-    # notify(recipent, 'follow')
   end
 
-  # Unfollows a user.
   def unfollow(other_user)
     active_relationships.find_by(followed_id: other_user.id).destroy
-    # notify(recipent, 'unfollow')
   end
 
-  # Returns true if the current user is following the other user.
   def following?(other_user)
     following.include?(other_user)
   end
-
-  # def notify(recipent, message)
-  #   Notification.create(recipent_id: 1, sender_id: current_user, message: "A #{message} ki has been created", is_read: false)
-  # end
 
   class << self
     def authenticate(email, password)

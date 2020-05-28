@@ -1,11 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create, :edit, :update, :destroy,:upvote]
-  # GET /posts
-  # GET /posts.json
-  # def index
-  #   @posts = Post.where(user_id: current_user.id)
-  # end
 
   def index
     @posts = Post.all
@@ -72,13 +67,12 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_post
       @post = Post.friendly.find(params[:id])
       authorize @post
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :image, :user_id)
     end
