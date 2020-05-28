@@ -1,0 +1,164 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+// Colors
+$bg-color: #e5b2a0;
+$dot-color: #351203;
+
+// Dimensions
+$dot-size: 2px;
+$dot-space: 22px;
+
+body {
+  background: linear-gradient(
+        90deg,
+        $bg-color ($dot-space - $dot-size),
+        transparent 1%
+      )
+      center,
+    linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+    $dot-color;
+  background-size: $dot-space $dot-space;
+  // padding-top: 100px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  .affix + .container-fluid {
+    padding-top: 30px;
+  }
+  
+
+.alert-alert {
+  @extend .alert-warning;
+}
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.well {
+  background-color: white;
+  border-radius: 0px;
+
+  .well-lg {
+    background-color: white;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.round-image-40 {
+  background-color: white;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  text-align: center;
+  img {
+    width: 100%;
+  }
+  margin-top: 5px;
+}
+
+.square-image-50 {
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  //  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+
+/* Add a dark background color with a little bit see-through */
+.navbar {
+  margin-bottom: 0;
+  background-color: #552a1a;
+  border: none;
+  border-radius: 0;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a,
+.navbar .navbar-brand {
+  color: #d5d5d5 !important;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+  color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+  color: #fff !important;
+  background-color: #29292c !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+  color: #fff;
+  background-color: #555 !important;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+  color: #000 !important;
+  // background-color: rgb(128, 33, 33) !important;
+  // z-index: 20000;
+}
+
+/* On hover, the dropdown links will turn red */
+.dropdown-menu li a:hover {
+  background-color: deepskyblue !important;
+}
+
+/* Black buttons with extra padding and without rounded borders */
+.btn {
+  padding: 10px 20px;
+  background-color: #351203;
+  border-radius: 0;
+  transition: 0.2s;
+  border: none;
+  color: white;
+}
+
+.btn--fb {
+  background-color: #3b5998;
+  color: white;
+}
+
+.btn--twitter {
+  background-color: #55acee;
+  color: white;
+}
+
+/* On hover, the color of .btn will transition to white with black text */
+.btn:hover,
+.btn:focus {
+  border: 1px solid #351203;
+  background-color: #fff;
+  color: #351203;
+}
