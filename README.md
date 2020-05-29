@@ -13,7 +13,7 @@ It's like 9gag.com :)
 - jQuery
 - Twitter Bootstrap 3
 - Gem: 
-    -  [devise](https://github.com/plataformatec/devise) | Authenticatio
+    -  [devise](https://github.com/plataformatec/devise) | Authentication
     -  [pg](https://github.com/ged/ruby-pg) | PostgreSQL library for Ruby
     -  [carrierwave](https://github.com/carrierwaveuploader/carrierwave) | Image upload management
 
