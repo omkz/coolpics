@@ -1,4 +1,4 @@
-class CreateDoorkeeperTables < ActiveRecord::Migration
+class CreateDoorkeeperTables < ActiveRecord::Migration[6.0]
   def change
     create_table :oauth_access_tokens do |t|
       t.integer  :resource_owner_id
